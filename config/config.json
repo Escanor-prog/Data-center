@@ -1,0 +1,8 @@
+{
+  "agent_token": "CHANGE_ME",
+  "auditeur_url": "https://auditeur.local",
+  "decideur_url": "https://decideur.local",
+  "analyseur_url": "https://analyseur.local",
+  "trusted_ca": "/etc/ssl/certs/ca.pem",
+  "simulateur_whitelist": ["127.0.0.1"]
+}
