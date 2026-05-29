@@ -1,0 +1,9 @@
+C:\Users\COMPUTER-CARE\Desktop\simlt\Data-center\target\debug\deps\futures_channel-b795d3cad050985c.d: C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\lib.rs C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\lock.rs C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\mpsc\mod.rs C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\mpsc\queue.rs C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\oneshot.rs
+
+C:\Users\COMPUTER-CARE\Desktop\simlt\Data-center\target\debug\deps\libfutures_channel-b795d3cad050985c.rmeta: C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\lib.rs C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\lock.rs C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\mpsc\mod.rs C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\mpsc\queue.rs C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\oneshot.rs
+
+C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\lib.rs:
+C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\lock.rs:
+C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\mpsc\mod.rs:
+C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\mpsc\queue.rs:
+C:\Users\COMPUTER-CARE\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-channel-0.3.32\src\oneshot.rs:
