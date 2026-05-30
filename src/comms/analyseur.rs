@@ -1,50 +1,55 @@
-use serde_json::json;
+use reqwest::Client;
 
-#[derive(Clone)]
 pub struct AnalyseurClient {
-    pub base_url: String,
-    pub token: String,
-    client: reqwest::Client,
+    client: Client,
+    url: String,
+    token: String,
 }
 
 impl AnalyseurClient {
-    pub fn new(base_url: String, token: String) -> Self {
+    pub fn new(url: String, token: String) -> Self {
         Self {
-            base_url,
+            client: Client::new(),
+            url,
             token,
-            client: reqwest::Client::new(),
         }
     }
 
-    pub async fn sim_start(&self, simulation_id: &str) -> Result<(), reqwest::Error> {
-        let url = format!("{}/simulation/mode", self.base_url);
-        let body = json!({
+    pub async fn sim_start(
+        &self,
+        perimetre_ip: &str,
+        duree_estimee: u32,
+    ) -> Result<(), reqwest::Error> {
+        let endpoint = format!("{}/simulation/mode", self.url);
+        let body = serde_json::json!({
             "event": "SIM_START",
-            "simulation_id": simulation_id,
+            "perimetre_ip": perimetre_ip,
+            "duree_estimee": duree_estimee
         });
 
         self.client
-            .post(&url)
+            .post(&endpoint)
             .header("X-Agent-Token", &self.token)
             .json(&body)
             .send()
             .await?;
+
         Ok(())
     }
 
-    pub async fn sim_end(&self, simulation_id: &str) -> Result<(), reqwest::Error> {
-        let url = format!("{}/simulation/mode", self.base_url);
-        let body = json!({
-            "event": "SIM_END",
-            "simulation_id": simulation_id,
+    pub async fn sim_end(&self) -> Result<(), reqwest::Error> {
+        let endpoint = format!("{}/simulation/mode", self.url);
+        let body = serde_json::json!({
+            "event": "SIM_END"
         });
 
         self.client
-            .post(&url)
+            .post(&endpoint)
             .header("X-Agent-Token", &self.token)
             .json(&body)
             .send()
             .await?;
+
         Ok(())
     }
 }

@@ -1,35 +1,40 @@
-use serde_json::json;
+use reqwest::Client;
 
-#[derive(Clone)]
 pub struct DecideurClient {
-    pub base_url: String,
-    pub token: String,
-    client: reqwest::Client,
+    client: Client,
+    url: String,
+    token: String,
 }
 
 impl DecideurClient {
-    pub fn new(base_url: String, token: String) -> Self {
+    pub fn new(url: String, token: String) -> Self {
         Self {
-            base_url,
+            client: Client::new(),
+            url,
             token,
-            client: reqwest::Client::new(),
         }
     }
 
-    pub async fn handshake(&self, simulation_id: &str, scenario: &str, target: &str) -> Result<(), reqwest::Error> {
-        let url = format!("{}/simulation/handshake", self.base_url);
-        let body = json!({
+    pub async fn handshake(
+        &self,
+        simulation_id: &str,
+        type_attaque: &str,
+        cible: &str,
+    ) -> Result<(), reqwest::Error> {
+        let endpoint = format!("{}/simulation/handshake", self.url);
+        let body = serde_json::json!({
             "simulation_id": simulation_id,
-            "scenario": scenario,
-            "target": target,
+            "type_attaque": type_attaque,
+            "cible": cible
         });
 
         self.client
-            .post(&url)
+            .post(&endpoint)
             .header("X-Agent-Token", &self.token)
             .json(&body)
             .send()
             .await?;
+
         Ok(())
     }
 }
